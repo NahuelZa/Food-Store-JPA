@@ -110,7 +110,4 @@ No hay carga inicial automática. Crear los datos desde el menú de consola en e
 
 ---
 
-## Entrega
 
-- **Video demostrativo:** [link aquí]
-- **Informe PDF:** [link aquí]
