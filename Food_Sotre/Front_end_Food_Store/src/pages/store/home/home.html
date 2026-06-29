@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodStone</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+
+
+<body>
+    <header>
+        <!-- Head -->
+        <div class="contenedor_header">
+            <div class="logo">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <span class="icono">🛒</span>
+                <h1><span>Food</span>Store</h1>
+            </div>
+            <!-- links navegacion-->
+            <nav class="links_nav">
+                <a href="../../store/home/home.html">Catalogo</a>
+                <a href="../../client/orders/orders.html" >Mis Pedidos</a>
+                <a href="../cart/cart.html" class="cart-link">
+                    Carrito
+                    <span id="cart-badge" class="cart-badge">0</span>
+                </a>
+                <span class="user" id="user"></span>
+                <button class="btn-logout" id="logoutButton">Cerrar Sesión</button>
+
+            </nav>
+
+
+        </div>
+    </header>
+    <!-- contenedor de todo el body-->
+    <div class="contenedor">
+        <aside class="barra_lateral">
+            <h3 class="titulo_barra_lateral">CATEGORÍAS</h3>
+            <nav class="categorias-nav">
+                <div id="categorias-container" class="categorias-container">
+                    <button class="cat-btn activo" id="cat-todos">Todos los productos</button>
+                </div>
+
+
+            </nav>
+        </aside>
+        <!--Contenedor de solo productos -->
+        <main class="contenedor_productos">
+            <div class="barra-herramientas">
+                <div class="buscador">
+                    <span class="lupa">🔍</span>
+                    <input type="text" placeholder="Buscar productos..." id="buscador">
+                </div>
+
+                <div class="ordenamiento">
+                    <label for="selector-orden">Ordenar por:</label>
+                    <select id="selector-orden">
+                        <option value="predeterminado">Destacados</option>
+                        <option value="nombre-az">Nombre (A-Z)</option>
+                        <option value="nombre-za">Nombre (Z-A)</option>
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                    </select>
+                </div>
+            </div>
+            <section id="grid-productos" class="grid-productos">
+
+            </section>
+            <h3 id="totalEncontrados"></h3>
+
+        </main>
+    </div>
+
+    <script type="module" src="./home.ts"></script>
+</body>
+
+
+</html>

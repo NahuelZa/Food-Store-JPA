@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="mi-primer-spring-boot.main" name="mi-primer-spring-boot.main" framework="JPA" ormUnit="mi-primer-spring-boot.main:mi-primer-spring-boot.main" defaultDataSourceId="75003fd0-7a71-446d-9cee-5ed887f5ba1d" />
+    </persistence-units>
+  </component>
+</project>

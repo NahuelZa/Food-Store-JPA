@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodStoneCarrito</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+
+<body>
+    <header>
+        <!-- Head -->
+        <div class="contenedor_header">
+            <div class="logo">
+                <span class="icono">🛒</span>
+                <h1><span>Food</span>Store</h1>
+            </div>
+            <div class="links_nav">
+                <a href="../../store/home/home.html">Catalogo</a>
+                <a href="../../client/orders/orders.html" >Mis Pedidos</a>
+                <a href="../../store/cart/cart.html">Carrito</a>
+                <span class="user" id="user"></span>
+                <button class="btn-logout" id="logoutButton">Cerrar Sesión</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- contenedor de todo el body-->
+    <div class="contenedor">
+
+
+
+        <main class="carrito">
+            <h1>Mi Carrito</h1>
+            <div id="carrito-container" class="carrito-container">
+            </div>
+        </main>
+
+    
+
+        <aside class="resumen" id="resumen">
+            <h3>Resumen</h3>
+            <p>Subtotal: <span id="subtotal"></span></p>
+            <hr>
+            <h2>Total: <span id="total"></span></span></h2>
+            <button class="btn-comprar" disabled>Finalizar Compra</button>
+            <p style="color: #888; font-size: 14px;">Boton de checkout desactivado en esta version</p>
+            <button class="btn-vaciar" id="vaciar-carrito" >Vaciar carrito</button>
+        </aside>
+
+
+        <script type="module" src="./cart.ts"></script>
+</body>
+
+
+</html>

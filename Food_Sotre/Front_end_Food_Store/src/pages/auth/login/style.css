@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+--color-primario: #132620;
+--color-fondo: #f0f0f0;
+--color-texto: #333;
+--color-blanco: #fff;
+--color-borde: #ddd;
+--color-focus: #ff4500;
+}
+
+body {
+    background-color: var(--color-primario);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.contenedor {
+    background-color: var(--color-blanco);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo {
+    color: var(--color-primario);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+label {
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #2d3748;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input::placeholder {
+    color: #a0aec0;
+}
+
+input:focus {
+    border-color: var(--color-borde);
+}
+
+
+button[type="submit"] {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 10px;
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-borde);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+
+.cuentas-prueba {
+    margin-top: 25px;
+    border-top: 1px solid #f7fafc;
+    padding-top: 15px;
+    color: #718096;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.cuentas-prueba p {
+    margin-bottom: 4px;
+}
+
+
+#error {
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+}

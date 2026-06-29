@@ -1,0 +1,341 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root {
+    --color-primario: #132620;
+    --color-fondo: #f0f0f0;
+    --color-texto: #333;
+    --color-blanco: #fff;
+    --color-borde: #ddd;
+    --color-focus: #ff4500;
+}
+.contenedor_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px  ;
+    background-color: var(--color-primario) ;
+    color: var(--color-blanco);
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo h1 {
+    font-weight: 800;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 span {
+    font-weight: 400;
+}
+
+.links_nav{
+    display: inherit;
+    gap: 20px;
+
+    align-items: center;
+}
+.links_nav a:hover{
+    cursor: pointer;
+    text-decoration:  underline var(--color-focus) ;
+    font-weight: bold;
+    text-underline-offset: 8px;
+}
+.links_nav a{
+    text-decoration: none;
+    color: inherit;
+
+
+
+}
+/*BADGE CARRITO*/
+.cart-link {
+    position: relative;
+    padding-right: 12px; /* Espacio extra para que el badge no pise las letras */
+}
+
+
+.cart-badge {
+    position: absolute;
+    top: -8px;          /* Lo sube un poco */
+    right: -10px;       /* Lo desplaza a la derecha */
+    background-color: var(--color-focus); /* Usa tu color naranja/rojo vibrante */
+    color: var(--color-blanco);
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+
+.cart-badge.pop {
+    transform: scale(1.3);
+}
+
+/*logout */
+.btn-logout {
+    padding: 8px 15px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/*ASIDE*/
+.barra_lateral {
+    width: 250px;
+    padding: 40px 20px;
+    background-color: var(--color-fondo);
+    border-right: 1px solid var(--color-borde);
+    min-height: 100vh;
+}
+
+.titulo_barra_lateral {
+    font-size: 12px;
+    color: var(--color-texto);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+}
+
+.categorias-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.categorias-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cat-btn {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 15px;
+    color: var(--color-primario);
+    cursor: pointer;
+    border-radius: 12px; /* Bordes suaves */
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+/*ASIDE TELEFONO*/
+/* Botón de menú oculto por defecto en pantallas de escritorio */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-blanco);
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* ==========================================================================
+   MEDIA QUERY: Estilos específicos para pantallas móviles
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Mostramos el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Modificamos el contenedor general para que pase de Grid a bloque normal */
+    .contenedor {
+        display: block;
+        position: relative;
+    }
+
+    /* Transformamos la barra lateral en un menú flotante oculto a la izquierda */
+    .barra_lateral {
+        position: fixed;
+        top: 60px; /* Se posiciona justo debajo del header */
+        left: -250px; /* Completamente escondido a la izquierda */
+        width: 250px;
+        height: calc(100vh - 60px);
+        z-index: 1000;
+        transition: left 0.3s ease; /* Transición suave de deslizamiento */
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Clase que inyectará TypeScript para mostrar el menú */
+    .barra_lateral.activo {
+        left: 0; /* Se desliza hacia adentro */
+    }
+
+    /* Ajustamos las herramientas en móvil para que se apilen verticalmente */
+    .barra-herramientas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .buscador {
+        max-width: 100%; /* El buscador ocupa todo el ancho disponible */
+    }
+}
+
+.cat-btn.activo {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-weight: 600;
+}
+
+/* Efecto al pasar el mouse por las que no están activas */
+.cat-btn:hover:not(.active) {
+    background-color: var(--color-blanco);
+    color: var(--color-primario)
+}
+
+/*CONTENEDOR*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+.contenedor_productos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/*BUSCADOR*/
+.buscador{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 0 15px;
+    height: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+.buscador input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 100%;
+    font-size: 14px;
+}
+
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+.buscador input:focus{
+    border-color: var(--color-primario);
+}
+
+.barra-herramientas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.ordenamiento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ordenamiento label {
+    font-size: 14px;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+.ordenamiento select {
+    padding: 8px 15px;
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+    outline: none;
+    background-color: var(--color-blanco);
+    color: var(--color-texto);
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.ordenamiento select:focus {
+    border-color: var(--color-primario);
+}
+/*GRID PRODUCTOS*/
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/*TARJETAS*/
+.tarjetas {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    background: #fff;
+    text-align: left;
+}
+
+.tarjetas img {
+    width: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.nombreProducto:hover{
+    cursor: pointer;
+}
+.btn-agregar{
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #2d5a4c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+

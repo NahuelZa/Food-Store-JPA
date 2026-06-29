@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+<div class="contenedor">
+    <div class="encabezado">
+        <h1 class="titulo"> SuperFood</h1>
+        <h2 class="subtitulo">Iniciar Sesión</h2>
+
+    </div>
+
+
+    <form id="form">
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password" name="password" autocomplete="off" placeholder="********">
+        </div>
+
+
+        <button type="submit">Ingresar</button>
+
+    </form>
+
+    <div class="cuentas-prueba">
+        <p style="font-weight: 600; color: #4a5568;">Cuentas de prueba:</p>
+        <p>Admin: admin@admin.com / 123456</p>
+        <p>Cliente: cliente@food.com / cliente123</p>
+    </div>
+
+    <div id="error"></div>
+
+</div>
+
+
+<!--<a href="/src/pages/auth/registro/registro.html">No tienes cuenta? registrate</a>-->
+
+
+<script type="module" src="./login.ts"></script>
+</body>
+
+</html>

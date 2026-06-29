@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: var(--color-fondo);
+}
+:root {
+    --color-primario: #132620;
+    --color-fondo: #f0f0f0;
+    --color-texto: #333;
+    --color-blanco: #fff;
+    --color-borde: #ddd;
+    --color-focus: #ff4500;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px ;
+    background: var(--color-primario);
+    border-bottom: 1px solid #eaeaea;
+    color: var(--color-fondo);
+
+}
+
+.navbar a:hover{
+    cursor: pointer;
+    text-decoration:  underline var(--color-focus) ;
+    font-weight: bold;
+    text-underline-offset: 8px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo h1 {
+    font-weight: 800;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 span {
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-blanco);
+    font-weight: 500;
+}
+
+/*BADGE CARRITO*/
+.cart-link {
+    position: relative;
+    padding-right: 12px; /* Espacio extra para que el badge no pise las letras */
+}
+
+
+.cart-badge {
+    position: absolute;
+    top: -8px;          /* Lo sube un poco */
+    right: -10px;       /* Lo desplaza a la derecha */
+    background-color: var(--color-focus); /* Usa tu color naranja/rojo vibrante */
+    color: var(--color-blanco);
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.btn-logout {
+    padding: 8px 15px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-section h1 {
+    color: var(--color-texto);
+}
+
+.select-filtro {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #eef0f2;
+    outline: none;
+}
+
+/* Tarjetas de Pedidos */
+.tarjeta-pedido {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tarjeta-pedido:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tarjeta-header h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.fecha {
+    color: #888;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.resumen-productos {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.total-precio {
+    color: #ff5722;
+    font-size: 1.2rem;
+}
+
+/* Badges de Estado */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.PENDIENTE {
+    background-color: #fff3cd;
+    color: #f6c23e;
+}
+
+.EN_PREPARACION {
+    background-color: #e0d4fc;
+    color: #8c9eff;
+}
+.CANCELADO{
+    background-color: #ff0000;
+    color: white;
+}
+
+.ENTREGADO{
+    background-color: #3cb80b;
+    color: white;
+}
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    width: 500px;
+    max-height: 90vh;
+    border-radius: 12px;
+    padding: 0;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#modal-body {
+    padding: 30px;
+}
+
+/* Contenido interno del Modal */
+.modal-top {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-section {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.modal-section p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.modal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #eee;
+    padding: 10px 0;
+}
+
+.modal-item:last-child {
+    border-bottom: none;
+}
+
+.item-info strong {
+    display: block;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.item-info small {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.item-subtotal {
+    color: #ff5722;
+    font-weight: bold;
+}
+
+.modal-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5722;
+    padding-top: 15px;
+    border-top: 2px solid #ff5722;
+    margin-top: 10px;
+}
+
+.al

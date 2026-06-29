@@ -1,0 +1,13 @@
+import type { IUser } from "../types/IUser";
+
+export const saveUser = (user: IUser) => {
+  const parseUser = JSON.stringify(user);
+  localStorage.setItem("userData", parseUser);
+};
+export const getUSer = () => {
+  return sessionStorage.getItem("usuarioLogueado");
+};
+
+export const removeUser = () => {
+  sessionStorage.removeItem("usuarioLogueado");
+};

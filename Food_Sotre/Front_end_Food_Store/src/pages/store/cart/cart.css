@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+body{
+    background-color: var(--color-fondo);
+}
+:root {
+--color-primario: #132620;
+--color-fondo: #f0f0f0;
+--color-texto: #333;
+--color-blanco: #fff;
+--color-borde: #ddd;
+--color-focus: #ff4500;
+}
+
+/*HEADER*/
+.contenedor_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px  ;
+    background-color: var(--color-primario) ; 
+    color: var(--color-blanco);   
+    
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+.logo h1 {
+    font-weight: 800; 
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 span {
+    font-weight: 400; 
+}
+
+.links_nav{
+    display: inherit;
+    gap: 20px;
+
+    align-items: center;
+}
+.links_nav a:hover{
+    cursor: pointer;
+    text-decoration:  underline var(--color-focus) ;
+    font-weight: bold;
+    text-underline-offset: 8px;
+}
+.links_nav a{
+    text-decoration: none;
+    color: inherit;
+
+}
+.btn-logout {
+    padding: 8px 15px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+/*CONTENEDOR */
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 40px;               
+    max-width: 1200px;       
+    margin: 40px auto;       
+    padding: 0 20px;
+}
+/*CONTENEDOR PRODUCTOS*/
+.carrito {
+    flex: 2;                 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 20px;
+    width: 100%;
+}
+
+.carrito-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%; 
+}
+/*ASIDE*/
+.resumen {
+    flex: 1; /* Es más angosto */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+    border: 1px solid #eee;
+}
+
+.resumen h3 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.resumen p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.resumen hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.resumen h2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+/*TARJETAS*/
+
+.tarjetas {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    background: #fff;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.tarjetas img {
+    width: 60px;
+    height: 60px;    
+    border-radius: 50%; 
+    aspect-ratio: 1/1;
+    object-fit: cover;    
+    
+}
+.producto {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-comprar{
+    background-color: var(--color-borde);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-vaciar{
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.btn-agregar:hover {
+    background-color: #2d5a4c;
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+.controles-item {
+    display: flex;
+    flex-direction: column; /* Apila el selector y el botón eliminar */
+    align-items: flex-end;    /* Los empuja a la derecha del contenedor */
+    gap: 8px;/* Espacio entre el selector y "Eliminar" */
+}
+
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5; /* Gris muy claro de la imagen */
+    border-radius: 10px;       /* Bordes muy redondeados */
+    padding: 5px 12px;
+    gap: 15px;                 /* Espacio entre botones y número */
+}
+
+.selector-cantidad button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    padding: 0 5px;
+}
+
+.selector-cantidad .cantidad {
+    font-weight: bold;
+    font-size: 14px;
+    min-width: 15px;
+    text-align: center;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #888;              /* Gris más oscuro para el texto */
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-eliminar:hover {
+    text-decoration: underline; /* Efecto visual al pasar el mouse */
+    color: #ff4500;            /* Opcional: cambia a rojo al querer borrar */
+}

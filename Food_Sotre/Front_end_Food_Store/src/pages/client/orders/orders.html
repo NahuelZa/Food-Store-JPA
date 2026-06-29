@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Pedidos - Food Store</title>
+  <link rel="stylesheet" href="./orders.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">🛒 <h1><span>Food</span>Store</h1></div>
+  <div class="nav-links">
+    <a href="../../store/home/home.html">Catalogo</a>
+    <a href="./orders.html" >Mis Pedidos</a>
+    <a href="../../store/cart/cart.html" class="cart-link">
+      Carrito
+      <span id="cart-badge" class="cart-badge">0</span>
+    </a>
+    <span class="user" id="user"></span>
+    <button class="btn-logout" id="logoutButton">Cerrar Sesión</button>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="header-section">
+    <h1>Mis Pedidos</h1>
+    <select id="filtro-estado" class="select-filtro">
+      <option value="todos">Todos</option>
+      <option value="pendiente">Pendiente</option>
+      <option value="en_preparacion">En Preparación</option>
+      <option value="entregado">Entregado</option>
+      <option value="cancelado">Cancelado</option>
+    </select>
+  </div>
+
+  <div id="lista-pedidos" class="pedidos-list"></div>
+</main>
+
+<div id="modal-detalle" class="modal-overlay">
+  <div class="modal-content">
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script type="module" src="./orders.ts"></script>
+</body>
+</html>

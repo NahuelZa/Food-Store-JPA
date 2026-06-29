@@ -1,0 +1,495 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+body{
+    background-color: var(--color-fondo);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+:root {
+    --color-primario: #132620;
+    --color-fondo: #f0f0f0;
+    --color-texto: #333;
+    --color-blanco: #fff;
+    --color-borde: #ddd;
+    --color-focus: #ff4500;
+    --bg-color: #f4f6f9;
+    --sidebar-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #777777;
+    --border-color: #eaeaea;
+    --orange-food: #ff6b4a;
+}
+
+/*HEADER*/
+.contenedor_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px  ;
+    background-color: var(--color-primario) ;
+    color: var(--color-blanco);
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo h1 {
+    font-weight: 800;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 span {
+    font-weight: 400;
+}
+
+.links_nav{
+    display: inherit;
+    gap: 20px;
+
+    align-items: center;
+}
+.links_nav a:hover{
+    cursor: pointer;
+    text-decoration:  underline var(--color-focus) ;
+    font-weight: bold;
+    text-underline-offset: 8px;
+}
+.links_nav a{
+    text-decoration: none;
+    color: inherit;
+
+}
+.btn-logout {
+    padding: 8px 15px;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+
+/* APP CONTAINER LAYOUT */
+.app-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    flex-shrink: 0;
+
+}
+
+.sidebar-header {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.sidebar-header h2 {
+    font-size: 0.9rem;
+    color: var(--color-focus);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-header p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #f8fafc;
+    color: var(--orange-food);
+    border-left-color: var(--orange-food);
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.5rem;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* METRICS GRID */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn-manage {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #333;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-manage:hover {
+    background: #ffffff;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* GRADIENTES DE TARJETAS */
+.card-purple { background: linear-gradient(135deg, #6358dc, #8371f1); }
+.card-pink { background: linear-gradient(135deg, #f35588, #ff7597); }
+.card-blue { background: linear-gradient(135deg, #05b3f4, #00d2ff); }
+.card-green { background: linear-gradient(135deg, #2ed573, #7bed9f); }
+
+/* RESUMEN RÁPIDO */
+.summary-section {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: var(--orange-food);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.summary-card {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #cbd5e1;
+}
+
+.summary-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* BORDES ACCENT Y COLORES TEXTO */
+.bar-green { border-left-color: #2ed573; }
+.text-green { color: #2ed573; }
+
+.bar-orange { border-left-color: #ffa502; }
+.text-orange { color: #ffa502; }
+
+.bar-blue { border-left-color: #1e90ff; }
+.text-blue { color: #1e90ff; }
+
+.bar-green-light { border-left-color: #26de81; }
+.text-green-light { color: #26de81; }
+
+
+/*TABLE CATEGORIAS */
+.table-container {
+    background-color: var(--color-blanco);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Clave para que la cabecera respete los bordes redondeados */
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+/* TABLA PRINCIPAL */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* CABECERA DE LA TABLA */
+.admin-table thead {
+    background-color: var(--orange-food); /* El color naranja #ff6b4a */
+    color: var(--color-blanco);
+}
+
+.admin-table th {
+    padding: 1.1rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* CELDAS DEL CUERPO (FILAS) */
+.admin-table td {
+    padding: 1.2rem 1.5rem;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+/* Efecto hover sutil al pasar el cursor por encima de una fila */
+.admin-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Elimina la línea divisoria inferior de la última fila para que no choque con el borde redondeado */
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* CONTROL DE ANCHOS DE COLUMNA  */
+.col-id {
+    width: 12%;
+}
+
+.col-nombre {
+    width: 33%;
+}
+
+.col-descripcion {
+    width: 55%;
+}
+/*TABLA PRODUCTOS*/
+
+.admin-table td {
+    vertical-align: middle;
+}
+
+/* Formato para resaltar los nombres de productos */
+.font-medium {
+    font-weight: 600;
+}
+
+/* MINIATURA DE IMAGEN (Pequeña, cuadrada y con bordes suaves) */
+.product-thumb {
+    width: 45px;
+    height: 45px;
+    object-fit: cover; /* Evita que la imagen se deforme si no es perfectamente cuadrada */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+/* PASTILLA DE ESTADO (Status Badge) */
+.status-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px; /* Hace el diseño de píldora circular */
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Color verde esmeralda idéntico al mockup */
+.badge-disponible {
+    background-color: #00b894;
+    color: var(--color-blanco);
+}.badge-no-disponible {
+    background-color: #b80022;
+    color: var(--color-blanco);
+}
+
+/* PROPORCIONES DE COLUMNAS PARA PRODUCTOS */
+.col-prod-id     { width: 5%; }
+.col-prod-img    { width: 8%; }
+.col-prod-nom    { width: 18%; }
+.col-prod-desc   { width: 38%; }
+.col-prod-precio { width: 10%; }
+.col-prod-cat    { width: 11%; }
+.col-prod-stock  { width: 5%; }
+.col-prod-est    { width: 5%; }
+
+
+/*PEDIDOS */
+/* ESTRUCTURA DE LA CABECERA (Alinea el título y el select en los extremos) */
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* FILTRO SELECT (Dropdown estilizado idéntico al mockup) */
+.filter-select {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #dfe4ea;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+/* CONTENEDOR DE TARJETAS (Distribución vertical con separación homogénea) */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* LA TARJETA (ORDER CARD) */
+.order-card {
+    background-color: var(--color-blanco);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+/* PARTE SUPERIOR DE LA TARJETA */
+.order-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1.2rem;
+}
+
+.order-meta h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+}
+
+.order-client, .order-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+}
+
+/* PARTE INFERIOR DE LA TARJETA (Separada por una línea divisoria sutil) */
+.order-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.2rem;
+}
+
+.order-count {
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.order-total {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--orange-food);
+}
+
+/* PASTILLAS DE ESTADO (Badges del listado de pedidos) */
+.badge {
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Colores para estado de pedido */
+.PENDIENTE {
+    background-color: #fff3cd;
+    color: #f6c23e;
+}
+
+.EN_PREPARACION {
+    background-color: #e0d4fc;
+    color: #8c9eff;
+}
+.CANCELADO{
+    background-color: #ff0000;
+    color: white;
+}
+
+.ENTREGADO{
+    background-color: #3cb80b;
+    color: white;
+}
+
