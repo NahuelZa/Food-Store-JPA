@@ -83,6 +83,7 @@ src/main/java/com/tp/jpa/
 ---
 
 ## Cómo ejecutar
+Situarse en Back_end Food Store/plantilla-foodstore-jpa y ejecutar:
 
 ```bash
 ./gradlew run
