@@ -38,12 +38,12 @@ server.port=8090
 ## Inicializarcion del Proyecto
 
 # Clonar el proyecto
-git clone [https://github.com/NahuelZa/Food-Store.git](https://github.com/NahuelZa/Food-Store-JPA/tree/main)
+git clone [https://github.com/NahuelZa/Food-Store-JPA/tree/main](https://github.com/NahuelZa/Food-Store-JPA/tree/main)
 
 Para levantar el servidor de desarrollo del backend utilizando un IDE (como IntelliJ IDEA o Eclipse), sigue estos pasos:
 
 1. **Acceder al directorio raíz** del repositorio clonado.
-2. **Situarse en Back_end Food Store/plantilla-foodstore-jpa y ejecutar:
+2. **Situarse en Back_end Food** Store/plantilla-foodstore-jpa y ejecutar:
 ```text
 ./gradlew run
 ```
