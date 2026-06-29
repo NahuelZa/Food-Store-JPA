@@ -45,7 +45,7 @@ Para levantar el servidor de desarrollo del backend utilizando un IDE (como Inte
 1. **Acceder al directorio raíz** del repositorio clonado.
 2. **Abrir la carpeta del proyecto** desde el IDE seleccionando la ruta y dirigirse a la clase principal navegando por la estructura de carpetas:
    ```text
-   \Back_end Food Store\configuracion-spring-boot-main\src\main\java\com\miempresa\tutorial\mi_primer_spring_boot\Back_end_Food_Store_Main.java
+   Back_end Food Store/plantilla-foodstore-jpa/src/main/java/com/tp/jpa/Main.java
   Ejecutar el método main
   
   En caso de que el IDE no reconozca gradle automaticamente hacer click derecho en el build.gradle y seleccionar 
